@@ -162,7 +162,7 @@ public class SatelliteRotateAround : MonoBehaviour
                 WGS84X.text = ECEFx.ToString("e");
                 WGS84Y.text = ECEFy.ToString("e");
                 WGS84Z.text = ECEFz.ToString("e");
-                float p = Mathf.Sqrt(Mathf.Pow(ECEFx, 2) + Mathf.Pow(ECEFx, 2));
+                float p = Mathf.Sqrt(Mathf.Pow(ECEFx, 2) + Mathf.Pow(ECEFy, 2));
                 float lon = Mathf.Atan(ECEFy / ECEFx);
                 if (ECEFy > 0 && lon < 0)
                 {
@@ -170,7 +170,7 @@ public class SatelliteRotateAround : MonoBehaviour
                 }
                 else
                 {
-                    if (yAxis < 0 && lon > 0)
+                    if (ECEFy < 0 && lon > 0)
                     {
                         lon -= Mathf.PI;
                     }

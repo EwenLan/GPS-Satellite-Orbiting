@@ -36,7 +36,7 @@ public class God : MonoBehaviour
             GPSTimePlaceholder.text = currentTime.ToString("e");
             //transform.Rotate(0, -Mathf.Rad2Deg * Coordinate.earthRotationAngularVelocity * Time.deltaTime * timeScale, 0);
             //Quaternion rotation = new Quaternion(0, Coordinate.AngleNormalize(currentTime / (2 * Mathf.PI / Coordinate.earthRotationAngularVelocity), 0, 2 * Mathf.PI) * Mathf.Rad2Deg, 0, 1);
-            transform.rotation = Quaternion.Euler(0, -Coordinate.AngleNormalize(currentTime * Coordinate.earthRotationAngularVelocity, 0, 2 * Mathf.PI) * Mathf.Rad2Deg - 180, 0);
+            transform.rotation = Quaternion.Euler(0, -Coordinate.AngleNormalize(currentTime * Coordinate.earthRotationAngularVelocity, 0, 2 * Mathf.PI) * Mathf.Rad2Deg, 0);
             rotatedAngle = Coordinate.AngleNormalize(currentTime * Coordinate.earthRotationAngularVelocity, 0, 2 * Mathf.PI) * Mathf.Rad2Deg;
             yield return null;
         }

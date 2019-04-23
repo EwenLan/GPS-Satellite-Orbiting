@@ -36,7 +36,7 @@ public class SolarRotation : MonoBehaviour
             {
                 progress -= 1;
             }
-            trueAnomaly = progress * 2 * Mathf.PI;
+            trueAnomaly = progress * 2 * Mathf.PI - Mathf.PI;
             ellipseX = radius * Mathf.Cos(trueAnomaly);
             ellipseY = radius * Mathf.Sin(trueAnomaly);
             Vector3 solarPosition = Coordinate.ECI2Unity(Coordinate.Ellipse2ECI(new Vector3(ellipseX, ellipseY, 0f), radius, eccentricity, perigeeArgument, orbitInclinationAngle, longitudeAscendingNode));
